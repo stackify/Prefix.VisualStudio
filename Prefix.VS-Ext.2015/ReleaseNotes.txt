@@ -1,0 +1,11 @@
+﻿Stackify Prefix Visual Studio 2015 Extension
+
+
+Prefix.2015 v0.1
+-----------------------------------------------
+Initial Release
+* Requires install of Stackify Prefix Service (http://prefix.io)
+* Prefix Command Button under View/Other Windows/Stackify Prefix
+* Prefix Trace Tools Window
+** List of traces provided by prefix
+** Connection State Screens and remedial actions if Disconnected

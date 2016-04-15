@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Prefix.VSExt2015.Controls.NotFound"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Prefix.VSExt2015.Controls"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:Models="clr-namespace:Prefix.VSExt2015.Models"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600"
+             DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             Background="#FF313E4F" 
+             Foreground="White" FontFamily="FontAwesome" >
+    <UserControl.Resources>
+        <SolidColorBrush Color="#FFdf691a" x:Key="HeaderColor"></SolidColorBrush>
+    </UserControl.Resources>
+    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="50">
+        <WrapPanel HorizontalAlignment="Center">
+            <fa:FontAwesome Icon="Plug" Margin="0,0,10,0" FontSize="18.667" Foreground="{StaticResource HeaderColor}"></fa:FontAwesome>
+            <TextBlock Text="Trying to connect to Prefix" FontSize="18.667" Foreground="{StaticResource HeaderColor}"></TextBlock>
+        </WrapPanel>
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" Text="You are disconnected from the Stackify Prefix Windows Service." Margin="0,10,0,0"></TextBlock>
+        <WrapPanel Visibility="{Binding Path=PrefixNotFound, Mode=OneWay}" HorizontalAlignment="Center" Margin="0,10">
+            <fa:FontAwesome Icon="Download" Margin="0,0,10,0"></fa:FontAwesome>
+            <TextBlock Margin="0,0,10,0" >Prefix wasn't found</TextBlock>
+            <TextBlock><Hyperlink RequestNavigate="Hyperlink_OnRequestNavigate" NavigateUri="http://www.prefix.io/" Foreground="{StaticResource HeaderColor}" >Install Now</Hyperlink></TextBlock>
+        </WrapPanel>
+        <WrapPanel Visibility="{Binding Path=PrefixNotRunning, Mode=OneWay}" HorizontalAlignment="Center" Margin="0,10">
+            <TextBlock Text="Prefix Service appears to be not running. Try restarting the service."></TextBlock>
+        </WrapPanel>
+    </StackPanel>
+</UserControl>

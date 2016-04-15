@@ -234,3 +234,7 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# VSIX Temp Folder
+VSIX/2015
+VSIX/PREFIX.2015.vsix
