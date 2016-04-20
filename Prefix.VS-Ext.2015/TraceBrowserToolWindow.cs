@@ -68,7 +68,16 @@ namespace Prefix.VSExt2015
                 {
                     MyDispatcher.Invoke(delegate
                     {
-                        Control.Model.Summaries.AddRange(a.ToDictionary(i => i.ID, i => new RequestSummaryVM(i)));
+                        foreach (var summary in a)
+                        {
+                            // prevent duplicate keys
+                            if (Control.Model.Summaries.ContainsKey(summary.ID) == false)
+                            {
+                                Control.Model.Summaries.Add(new KeyValuePair<string, RequestSummaryVM>(summary.ID,
+                                    new RequestSummaryVM(summary)));
+                            }
+                        }
+                        
                         var list = Control.FindName("TraceList") as ListView;
                         if (list == null) return;
                         list.ScrollIntoView(list.Items.GetItemAt(list.Items.Count - 1));
