@@ -1,10 +1,4 @@
-﻿//------------------------------------------------------------------------------
-// <copyright file="TraceBrowser.cs" company="Company">
-//     Copyright (c) Company.  All rights reserved.
-// </copyright>
-//------------------------------------------------------------------------------
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;

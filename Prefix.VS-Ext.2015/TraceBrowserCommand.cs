@@ -1,10 +1,4 @@
-﻿//------------------------------------------------------------------------------
-// <copyright file="TraceBrowserCommand.cs" company="Company">
-//     Copyright (c) Company.  All rights reserved.
-// </copyright>
-//------------------------------------------------------------------------------
-
-using System;
+﻿using System;
 using System.ComponentModel.Design;
 using System.Globalization;
 using Microsoft.VisualStudio.Shell;
